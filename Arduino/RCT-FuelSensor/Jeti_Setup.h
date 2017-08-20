@@ -40,4 +40,4 @@ if (type == 1) {
 
 JB.setValue30(JB.addData(F("Consumption"), F("ml")), &uCons, 0);
 JB.setValue30(JB.addData(F("Flow Speed"), F("ml/m")), &uFlow, 0);
-JB.setValue14(JB.addData(F("Gauge"), F("%")), &uFuel, 0);
+JB.setValue14(JB.addData(F("Remaining"), F("%")), &uFuel, 0);
