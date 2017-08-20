@@ -10,7 +10,7 @@
 //
 // Max screens in jetibox (navigating over this goes to start)
 //
-#define MAX_SCREEN 6
+#define MAX_SCREEN 7
 
 //
 // Sensor ID (0x02) - Needs to be unique in a model
@@ -23,6 +23,7 @@ const unsigned char Jeti_SensorID4 = 0x06;
 // Jeti values
 long uCons = 0;
 long uFlow = 0;
+int uFuel = 100;
 // Sensor values
 int count_raw = 0;
 int count_last = 0;
@@ -30,3 +31,4 @@ long lastTime = 0;
 float calVal = 1000;
 int type = 0;
 int pulses = 24;
+long tankSize = 0;

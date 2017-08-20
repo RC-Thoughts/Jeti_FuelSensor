@@ -1,6 +1,6 @@
 /*
   -----------------------------------------------------------
-          RCT-Jeti Tools - Jeti Fuel Sensor v 1.0
+          RCT-Jeti Tools - Jeti Fuel Sensor v 1.1
   -----------------------------------------------------------
 
   Tero Salminen RC-Thoughts.com (c) 2017 www.rc-thoughts.com
@@ -12,6 +12,7 @@
     Values:
     - Fuel consumption in ml
     - Fuel flow speed in ml/m depending on sensor module
+    - Fuel gauge in percent, tank size set via Jetibox
 
     Hardware:
     - Arduino Pro Mini 5V

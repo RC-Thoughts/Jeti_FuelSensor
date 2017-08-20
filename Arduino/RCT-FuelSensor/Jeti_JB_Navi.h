@@ -13,9 +13,10 @@
 case 224 : // RIGHT
 if (current_screen != MAX_SCREEN)
 {
-  if (current_screen == 5) {
+  if (current_screen == 6) {
     EEPROM.write(1, type);
-    EEPROM.put(2, calVal);
+    EEPROM.put(10, calVal);
+    EEPROM.put(20, tankSize);
     delay(200);
     resetFunc();
   } else {
@@ -33,14 +34,20 @@ if (current_screen != 0) {
 break;
 case 208 : // UP
 if (current_screen == 3) {
+  tankSize = tankSize + 100;
+}
+if (current_screen == 4) {
   calVal = calVal + 1;
 }
 break;
 case 176 : // DOWN
 if (current_screen == 3) {
-  calVal = calVal - 1;
+  tankSize = tankSize + 1000;
 }
 if (current_screen == 4) {
+  calVal = calVal - 1;
+}
+if (current_screen == 5) {
   if (type == 1) {
     type = 0;
     EEPROM.write(1, type);
@@ -51,25 +58,33 @@ if (current_screen == 4) {
 }
 break;
 case 144 : // UP+DOWN
+if (current_screen == 3) {
+  tankSize = tankSize + 50;
+}
 if (current_screen == 2) {
   count_raw = 0;
   current_screen = 1;
 }
-if (current_screen == 3) {
+if (current_screen == 4) {
   calVal = calVal + 10;
 }
-if (current_screen == 5) {
+if (current_screen == 6) {
   type = 0;
   calVal = 1000;
+  tankSize = 0;
   EEPROM.write(0, 1);
   EEPROM.write(1, type);
-  EEPROM.put(2, calVal);
+  EEPROM.put(10, calVal);
+  EEPROM.put(20, tankSize);
   delay(200);
   resetFunc();
 }
 break;
 case 96 : // LEFT+RIGHT
 if (current_screen == 3) {
+  tankSize = 0;
+}
+if (current_screen == 4) {
   calVal = calVal - 10;
 }
 break;

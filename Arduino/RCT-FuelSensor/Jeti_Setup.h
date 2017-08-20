@@ -15,12 +15,14 @@ attachInterrupt(digitalPinToInterrupt(PULSES_IN), flowTick, CHANGE);
 if (EEPROM.read(0) != 1) {
   EEPROM.write(0, 1);
   EEPROM.write(1, type);
-  EEPROM.put(2, calVal);
+  EEPROM.put(10, calVal);
+  EEPROM.put(20, tankSize);
 }
 
 // Read normal startup-settings
 type = EEPROM.read(1);
-EEPROM.get(2, calVal);
+EEPROM.get(10, calVal);
+EEPROM.get(20, tankSize);
 
 if (type == 1) {
   pulses = 4; // 50-3000ml/m
@@ -38,3 +40,4 @@ if (type == 1) {
 
 JB.setValue30(JB.addData(F("Consumption"), F("ml")), &uCons, 0);
 JB.setValue30(JB.addData(F("Flow Speed"), F("ml/m")), &uFlow, 0);
+JB.setValue14(JB.addData(F("Gauge"), F("%")), &uFuel, 0);
