@@ -11,12 +11,16 @@ JB.Init(F("RCT Fuel"), JETI_RX, 9800);
 pinMode(PULSES_IN, INPUT_PULLUP);
 attachInterrupt(digitalPinToInterrupt(PULSES_IN), flowTick, CHANGE);
 
-// Calibration settings - Resetted to default on first use
+// Calibration settings - Reset to defaults on first use of Arduino Pro Mini
 if (EEPROM.read(0) != 1) {
-  EEPROM.put(1, calVal);
   EEPROM.write(0, 1);
+  EEPROM.write(1, type);
+  EEPROM.put(2, calVal);
 }
-EEPROM.get(1, calVal);
+
+// Read normal startup-settings
+type = EEPROM.read(1);
+EEPROM.get(2, calVal);
 
 // Define Jeti Sensor value name & unit & variable & precision (decimals)
 // JB.setValue30(JB.addData(F("NAME"), F("UNIT")), &VARIABLE, DEC);

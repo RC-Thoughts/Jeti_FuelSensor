@@ -13,8 +13,9 @@
 case 224 : // RIGHT
 if (current_screen != MAX_SCREEN)
 {
-  if (current_screen == 3) {
-    EEPROM.put(1, calVal);
+  if (current_screen == 5) {
+    EEPROM.write(1, type);
+    EEPROM.put(2, calVal);
     current_screen = 99;
   } else {
     current_screen++;
@@ -38,6 +39,15 @@ case 176 : // DOWN
 if (current_screen == 3) {
   calVal = calVal - 1;
 }
+if (current_screen == 4) {
+  if (type == 1) {
+    type = 0;
+    EEPROM.write(1, type);
+  } else {
+    type = 1;
+    EEPROM.write(1, type);
+  }
+}
 break;
 case 144 : // UP+DOWN
 if (current_screen == 2) {
@@ -46,6 +56,14 @@ if (current_screen == 2) {
 }
 if (current_screen == 3) {
   calVal = calVal + 10;
+}
+if (current_screen == 5) {
+  type = 0;
+  calVal = 1000;
+  EEPROM.write(0, 1);
+  EEPROM.write(1, type);
+  EEPROM.put(2, calVal);
+  current_screen = 99;
 }
 break;
 case 96 : // LEFT+RIGHT

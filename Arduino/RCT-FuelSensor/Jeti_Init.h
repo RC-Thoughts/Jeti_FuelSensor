@@ -10,7 +10,7 @@
 //
 // Max screens in jetibox (navigating over this goes to start)
 //
-#define MAX_SCREEN 5
+#define MAX_SCREEN 6
 
 //
 // Sensor ID (0x02) - Needs to be unique in a model
@@ -28,3 +28,5 @@ int count_raw = 0;
 int count_last = 0;
 long lastTime = 0;
 float calVal = 1000;
+int type = 0;
+int pulses = 24;

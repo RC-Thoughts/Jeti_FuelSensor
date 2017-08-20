@@ -35,7 +35,27 @@ case 3 : {
   floatToString((char*)&temp, calVal, 0);
   strcat((char*)&msg_line1, (char*)&temp);
   strcat_P((char*)&msg_line1, (const char*)F("ml"));
-  strcat_P((char*)&msg_line2, (const char*)F("Press > to Save"));
+  strcat_P((char*)&msg_line2, (const char*)F("         Next >"));
+  JB.JetiBox((char*)&msg_line1, (char*)&msg_line2);
+  break;
+}
+case 4 : {
+  msg_line1[0] = 0; msg_line2[0] = 0;
+  strcat_P((char*)&msg_line1, (const char*)F("Sensor: "));
+  if (type == 0) {
+    strcat_P((char*)&msg_line1, (const char*)F("15-800"));
+  }
+  if (type == 1) {
+    strcat_P((char*)&msg_line1, (const char*)F("50-3000"));
+  }
+  strcat_P((char*)&msg_line2, (const char*)F("Chg Dn Next >"));
+  JB.JetiBox((char*)&msg_line1, (char*)&msg_line2);
+  break;
+}
+case 5 : {
+  msg_line1[0] = 0; msg_line2[0] = 0;
+  strcat_P((char*)&msg_line1, (const char*)F("Reset Defaults"));
+  strcat_P((char*)&msg_line2, (const char*)F("Rst UpDn Save >"));
   JB.JetiBox((char*)&msg_line1, (char*)&msg_line2);
   break;
 }
