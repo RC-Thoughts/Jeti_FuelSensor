@@ -3,13 +3,6 @@
 //
 // May the flow be with you
 
-// Define sensor type
-if (type == 1) {
-  pulses = 4; // 50-3000ml/m
-} else {
-  pulses = 24; // 15-800ml/m
-}
-
 // Total consumption (calibrated)
 uCons = ((double)count_raw / pulses) * (1000 / calVal);
 
@@ -18,7 +11,7 @@ if (millis() > lastTime + 1000 && millis() > 5000)
 {
   int diff = millis() - lastTime;
   int timeCount = count_raw - count_last;
-  uFlow = (double)timeCount / pulses * 60 / ((double)diff / 1000) * (1000 / calVal);
+  uFlow = ((double)timeCount / pulses * 60 / ((double)diff / 1000)) * (1000 / calVal);
   lastTime = millis();
   count_last = count_raw;
 }

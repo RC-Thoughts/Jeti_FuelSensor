@@ -54,15 +54,8 @@ case 4 : {
 }
 case 5 : {
   msg_line1[0] = 0; msg_line2[0] = 0;
-  strcat_P((char*)&msg_line1, (const char*)F("Reset Defaults"));
+  strcat_P((char*)&msg_line1, (const char*)F("Reset or Save"));
   strcat_P((char*)&msg_line2, (const char*)F("Rst UpDn Save >"));
-  JB.JetiBox((char*)&msg_line1, (char*)&msg_line2);
-  break;
-}
-case 99 : {
-  msg_line1[0] = 0; msg_line2[0] = 0;
-  strcat_P((char*)&msg_line1, (const char*)F("Settings Stored!"));
-  strcat_P((char*)&msg_line2, (const char*)F("Press < To Exit"));
   JB.JetiBox((char*)&msg_line1, (char*)&msg_line2);
   break;
 }

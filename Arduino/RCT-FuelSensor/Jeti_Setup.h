@@ -22,6 +22,12 @@ if (EEPROM.read(0) != 1) {
 type = EEPROM.read(1);
 EEPROM.get(2, calVal);
 
+if (type == 1) {
+  pulses = 4; // 50-3000ml/m
+} else {
+  pulses = 24; // 15-800ml/m
+}
+
 // Define Jeti Sensor value name & unit & variable & precision (decimals)
 // JB.setValue30(JB.addData(F("NAME"), F("UNIT")), &VARIABLE, DEC);
 //

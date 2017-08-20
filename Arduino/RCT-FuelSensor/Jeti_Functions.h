@@ -5,3 +5,5 @@ void flowTick()
 {
   count_raw++;
 }
+
+void(* resetFunc) (void) = 0;

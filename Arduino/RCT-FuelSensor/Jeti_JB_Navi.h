@@ -16,7 +16,8 @@ if (current_screen != MAX_SCREEN)
   if (current_screen == 5) {
     EEPROM.write(1, type);
     EEPROM.put(2, calVal);
-    current_screen = 99;
+    delay(200);
+    resetFunc();
   } else {
     current_screen++;
   }
@@ -52,7 +53,7 @@ break;
 case 144 : // UP+DOWN
 if (current_screen == 2) {
   count_raw = 0;
-  current_screen = 99;
+  current_screen = 1;
 }
 if (current_screen == 3) {
   calVal = calVal + 10;
@@ -63,7 +64,8 @@ if (current_screen == 5) {
   EEPROM.write(0, 1);
   EEPROM.write(1, type);
   EEPROM.put(2, calVal);
-  current_screen = 99;
+  delay(200);
+  resetFunc();
 }
 break;
 case 96 : // LEFT+RIGHT
