@@ -35,7 +35,7 @@ if (type == 1) {
 //
 // Sensor-value ranges:
 // JB.setValue6 =   -31 to 31               (Variable is uint8_t)
-// JB.setValue30 =  -8191 to 8191           (Variable is int)
+// JB.setValue14 =  -8191 to 8191           (Variable is int)
 // JB.setValue30 =  -536870911 to 536870911 (Variable is long)
 
 JB.setValue30(JB.addData(F("Consumption"), F("ml")), &uCons, 0);

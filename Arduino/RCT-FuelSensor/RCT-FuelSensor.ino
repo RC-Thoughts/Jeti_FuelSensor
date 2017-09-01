@@ -1,6 +1,6 @@
 /*
   -----------------------------------------------------------
-          RCT-Jeti Tools - Jeti Fuel Sensor v 1.1
+          RCT-Jeti Tools - Jeti Fuel Sensor v 1.2
   -----------------------------------------------------------
 
   Tero Salminen RC-Thoughts.com (c) 2017 www.rc-thoughts.com
@@ -17,10 +17,10 @@
     Hardware:
     - Arduino Pro Mini 5V
     - Bio-Tech FCH-M Low Flow Flowmeter:
-    
+
       Item 155374-89 for 15-800ml/m (www.conrad.com)
       Item 50-0028   for 50-3000ml/m (www.rapidonline.com)
-      
+
   Loosely based on the original idea of RealTadango 2017
   -----------------------------------------------------------
   Shared under MIT-license by Tero Salminen (c) 2017

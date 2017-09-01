@@ -11,7 +11,12 @@ if (uCons < 0) {
 
 // Fuel gauge in percent
 if (tankSize > 0 and uCons > 0) {
-  uFuel = 100 - (100 / (tankSize / uCons));
+  float tank = tankSize;
+  float cons = uCons;
+  uFuel = 100 - (100 / (tank / cons));
+  if (uFuel < 0) {
+    uFuel = 0;
+  }
 }
 
 //Calc fuel flow in ml/m (calibrated)
