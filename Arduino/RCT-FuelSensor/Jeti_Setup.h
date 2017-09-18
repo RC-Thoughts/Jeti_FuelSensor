@@ -13,22 +13,16 @@ attachInterrupt(digitalPinToInterrupt(PULSES_IN), flowTick, CHANGE);
 
 // Calibration settings - Reset to defaults on first use of Arduino Pro Mini
 if (EEPROM.read(0) != 1) {
-  EEPROM.write(0, 1);
-  EEPROM.write(1, type);
-  EEPROM.put(10, calVal);
-  EEPROM.put(20, tankSize);
+  EEPROM.write(0, 1); // Reset byte
+  EEPROM.write(1, 0); // Calibration not done = 0, done = 1
+  EEPROM.put(10, tankSize);
+  EEPROM.put(20, pulseCount);
 }
 
 // Read normal startup-settings
-type = EEPROM.read(1);
-EEPROM.get(10, calVal);
-EEPROM.get(20, tankSize);
-
-if (type == 1) {
-  pulses = 4; // 50-3000ml/m
-} else {
-  pulses = 24; // 15-800ml/m
-}
+calibDone = EEPROM.read(1);
+EEPROM.get(10, tankSize);
+EEPROM.get(20, pulseCount);
 
 // Define Jeti Sensor value name & unit & variable & precision (decimals)
 // JB.setValue30(JB.addData(F("NAME"), F("UNIT")), &VARIABLE, DEC);

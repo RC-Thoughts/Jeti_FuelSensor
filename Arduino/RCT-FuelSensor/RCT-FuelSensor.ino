@@ -1,6 +1,6 @@
 /*
   -----------------------------------------------------------
-          RCT-Jeti Tools - Jeti Fuel Sensor v 1.2
+          RCT-Jeti Tools - Jeti Fuel Sensor v 1.3
   -----------------------------------------------------------
 
   Tero Salminen RC-Thoughts.com (c) 2017 www.rc-thoughts.com
@@ -20,6 +20,8 @@
 
       Item 155374-89 for 15-800ml/m (www.conrad.com)
       Item 50-0028   for 50-3000ml/m (www.rapidonline.com)
+
+  Can use any pin-compatible Bio-Tech FCH-M Low Flow module!
 
   Loosely based on the original idea of RealTadango 2017
   -----------------------------------------------------------
@@ -165,8 +167,8 @@ void setup()
 
 void process_screens()
 {
-  char msg_line1[LCDMaxPos / 2];
-  char msg_line2[LCDMaxPos / 2];
+  char msg_line1[LCDMaxPos / 2 + 1];
+  char msg_line2[LCDMaxPos / 2 + 1];
   char temp[LCDMaxPos / 2];
 
   if (last_screen != current_screen)

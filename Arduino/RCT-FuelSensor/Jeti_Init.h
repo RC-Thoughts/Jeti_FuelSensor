@@ -25,10 +25,9 @@ long uCons = 0;
 long uFlow = 0;
 int uFuel = 100;
 // Sensor values
-int count_raw = 0;
-int count_last = 0;
+long count_raw = 0;
+long count_last = 0;
 long lastTime = 0;
-float calVal = 1000;
-int type = 0;
-int pulses = 24;
 long tankSize = 0;
+long pulseCount = 0;
+int calibDone = 0;
