@@ -48,12 +48,25 @@ case 4 : {
     strcat((char*)&msg_line1, (char*)&temp);
   } else {
     strcat_P((char*)&msg_line1, (const char*)F("Done!"));
-    }
+  }
   strcat_P((char*)&msg_line2, (const char*)F("Rst Dn   Next >"));
   JB.JetiBox((char*)&msg_line1, (char*)&msg_line2);
   break;
 }
 case 5 : {
+  msg_line1[0] = 0; msg_line2[0] = 0;
+  strcat_P((char*)&msg_line1, (const char*)F("Dig.Reset: "));
+  if (resetFunction == 0) {
+    strcat_P((char*)&msg_line1, (const char*)F("No"));
+  }
+  if (resetFunction == 1) {
+    strcat_P((char*)&msg_line1, (const char*)F("Yes"));
+  }
+  strcat_P((char*)&msg_line2, (const char*)F("Change Dn Next >"));
+  JB.JetiBox((char*)&msg_line1, (char*)&msg_line2);
+  break;
+}
+case 6 : {
   msg_line1[0] = 0; msg_line2[0] = 0;
   strcat_P((char*)&msg_line1, (const char*)F("Reset or Save"));
   strcat_P((char*)&msg_line2, (const char*)F("Rst UpDn Save >"));

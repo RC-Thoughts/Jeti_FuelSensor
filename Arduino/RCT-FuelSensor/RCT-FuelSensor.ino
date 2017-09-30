@@ -1,6 +1,6 @@
 /*
   -----------------------------------------------------------
-          RCT-Jeti Tools - Jeti Fuel Sensor v 1.3
+          RCT-Jeti Tools - Jeti Fuel Sensor v 1.4
   -----------------------------------------------------------
 
   Tero Salminen RC-Thoughts.com (c) 2017 www.rc-thoughts.com
