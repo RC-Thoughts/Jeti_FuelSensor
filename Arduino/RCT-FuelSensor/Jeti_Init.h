@@ -18,7 +18,7 @@
 const unsigned char Jeti_SensorID4 = 0x06;
 
 //
-// Sensor variables & other init-stuff nede
+// Sensor variables & other init-stuff needed
 //
 // Jeti values
 long uCons = 0;

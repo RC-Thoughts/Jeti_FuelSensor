@@ -39,9 +39,14 @@ if (current_screen != 0) {
   current_screen--;
 }
 break;
+
 case 208 : // UP
 if (current_screen == 3) {
   tankSize = tankSize + 100;
+}
+if (current_screen == 4) {
+  count_raw = count_raw + 100;
+  calibDone = 0;
 }
 break;
 
@@ -63,7 +68,7 @@ if (current_screen == 3) {
   tankSize = tankSize + 1000;
 }
 if (current_screen == 4) {
-  count_raw = 0;
+  count_raw = count_raw + 1000;
   calibDone = 0;
 }
 if (current_screen == 5) {
@@ -81,6 +86,10 @@ case 144 : // UP+DOWN
 if (current_screen == 3) {
   tankSize = tankSize + 50;
 }
+if (current_screen == 4) {
+  count_raw = count_raw + 10;
+  calibDone = 0;
+}
 if (current_screen == 6) {
   EEPROM.write(0, 0); // Reset byte
   delay(200);
@@ -91,5 +100,9 @@ break;
 case 96 : // LEFT+RIGHT
 if (current_screen == 3) {
   tankSize = 0;
+}
+if (current_screen == 4) {
+  count_raw = 0;
+  calibDone = 0;
 }
 break;

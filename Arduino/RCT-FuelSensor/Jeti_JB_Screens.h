@@ -47,9 +47,11 @@ case 4 : {
     floatToString((char*)&temp, count_raw, 0);
     strcat((char*)&msg_line1, (char*)&temp);
   } else {
-    strcat_P((char*)&msg_line1, (const char*)F("Done!"));
+    floatToString((char*)&temp, count_raw, 0);
+    strcat((char*)&msg_line1, (char*)&temp);
+    strcat_P((char*)&msg_line1, (const char*)F("*"));
   }
-  strcat_P((char*)&msg_line2, (const char*)F("Rst Dn   Next >"));
+  strcat_P((char*)&msg_line2, (const char*)F("Rst LeRi Next >"));
   JB.JetiBox((char*)&msg_line1, (char*)&msg_line2);
   break;
 }
