@@ -47,7 +47,7 @@ case 4 : {
     floatToString((char*)&temp, count_raw, 0);
     strcat((char*)&msg_line1, (char*)&temp);
   } else {
-    floatToString((char*)&temp, count_raw, 0);
+    floatToString((char*)&temp, pulseCount, 0);
     strcat((char*)&msg_line1, (char*)&temp);
     strcat_P((char*)&msg_line1, (const char*)F("*"));
   }
