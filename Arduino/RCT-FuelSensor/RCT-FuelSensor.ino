@@ -1,6 +1,6 @@
 /*
   -----------------------------------------------------------
-          RCT-Jeti Tools - Jeti Fuel Sensor v 1.6
+          RCT-Jeti Tools - Jeti Fuel Sensor v 1.7
   -----------------------------------------------------------
 
   Tero Salminen RC-Thoughts.com (c) 2017 www.rc-thoughts.com
@@ -25,7 +25,7 @@
 
   Loosely based on the original idea of RealTadango 2017
   -----------------------------------------------------------
-  Shared under MIT-license by Tero Salminen (c) 2017
+  Shared under MIT-license by Tero Salminen (c) 2017-2018
   -----------------------------------------------------------
 */
 

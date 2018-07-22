@@ -15,7 +15,7 @@
 //
 // Sensor ID (0x02) - Needs to be unique in a model
 //
-const unsigned char Jeti_SensorID4 = 0x06;
+const unsigned char Jeti_SensorID4 = 0x07;
 
 //
 // Sensor variables & other init-stuff needed

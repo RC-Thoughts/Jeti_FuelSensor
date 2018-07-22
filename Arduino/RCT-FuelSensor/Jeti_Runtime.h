@@ -4,7 +4,7 @@
 // 
 
 // Total consumption (calibrated)
-uCons = ((double)count_raw / ( pulseCount / 1000 ));
+uCons = count_raw * 1000 / pulseCount;
 if ( uCons < 0 ) {
   uCons = 0;
 }
@@ -24,7 +24,7 @@ if ( millis() > lastTime + 1000 && millis() > 5000 )
 {
   int diff = millis() - lastTime;
   int timeCount = count_raw - count_last;
-  uFlow = ( (double)timeCount / ( pulseCount / 1000 ) * 60 / ( (double)diff / 1000 ) );
+  uFlow = ((double)timeCount / ((double)pulseCount / 1000) * 60 / ((double)diff / 1000 ));
   lastTime = millis();
   count_last = count_raw;
 }
